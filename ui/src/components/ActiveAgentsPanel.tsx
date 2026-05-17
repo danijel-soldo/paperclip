@@ -23,6 +23,23 @@ function isRunActive(run: LiveRunForIssue): boolean {
   return run.status === "queued" || run.status === "running";
 }
 
+function getRunStatusSummary(run: LiveRunForIssue): string {
+  switch (run.status) {
+    case "succeeded":
+      return "Completed successfully";
+    case "failed":
+      return "Failed";
+    case "timed_out":
+      return "Timed out";
+    case "cancelled":
+      return "Cancelled";
+    case "adapter_failed":
+      return "Adapter error";
+    default:
+      return run.status;
+  }
+}
+
 interface ActiveAgentsPanelProps {
   companyId: string;
   title?: string;
@@ -76,7 +93,7 @@ export function ActiveAgentsPanel({
     maxChunksPerRun: DASHBOARD_MAX_CHUNKS_PER_RUN,
     logPollIntervalMs: DASHBOARD_LOG_POLL_INTERVAL_MS,
     logReadLimitBytes: DASHBOARD_LOG_READ_LIMIT_BYTES,
-    enableRealtimeUpdates: false,
+    enableRealtimeUpdates: true,
   });
 
   return (
@@ -90,7 +107,7 @@ export function ActiveAgentsPanel({
         </div>
       ) : (
         <div className={cn("grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4", gridClassName)}>
-          {visibleRuns.map((run) => (
+          {visibleRuns.map((run: LiveRunForIssue) => (
             <AgentRunCard
               key={run.id}
               companyId={companyId}
@@ -156,6 +173,20 @@ const AgentRunCard = memo(function AgentRunCard({
             </div>
             <div className="mt-2 flex items-center gap-2 text-[11px] text-muted-foreground">
               <span>{isActive ? "Live now" : run.finishedAt ? `Finished ${relativeTime(run.finishedAt)}` : `Started ${relativeTime(run.createdAt)}`}</span>
+              {!isActive && (
+                <span className={cn(
+                  "rounded px-1 py-0.5 font-medium",
+                  run.status === "succeeded"
+                    ? "bg-green-500/10 text-green-700 dark:text-green-400"
+                    : run.status === "failed" || run.status === "adapter_failed"
+                      ? "bg-red-500/10 text-red-700 dark:text-red-400"
+                      : run.status === "timed_out"
+                        ? "bg-amber-500/10 text-amber-700 dark:text-amber-400"
+                        : "bg-muted text-muted-foreground",
+                )}>
+                  {getRunStatusSummary(run)}
+                </span>
+              )}
             </div>
           </div>
 

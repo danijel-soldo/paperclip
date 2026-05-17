@@ -1,0 +1,44 @@
+
+================================================================================
+ERROR LOGGED: 2026-05-17T14:32:44.296Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: Error
+Error Message: Path validation failed: Attempted path "/home/vpcuser" resolves outside the allowed workspace directories: /home/vpcuser/upstream-paperclip/paperclip
+
+Stack Trace:
+Error: Path validation failed: Attempted path "/home/vpcuser" resolves outside the allowed workspace directories: /home/vpcuser/upstream-paperclip/paperclip
+    at qJn (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2296:86491)
+    at t.validateToolParams (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2299:3845)
+    at t.build (file:///usr/lib/node_modules/bobshell/bundle/bob.js:378:62268)
+    at unt.convertAccumulatedToolCallsToGemini (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2187:1086)
+    at unt.generateContentStreamInternal (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2184:415)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async M6.loggingStreamWrapper (file:///usr/lib/node_modules/bobshell/bundle/bob.js:798:31296)
+    at async oY.processStreamResponse (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2485:81)
+    at async file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:22044
+    at async bQ.run (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2485:3153)
+================================================================================
+
+
+================================================================================
+ERROR LOGGED: 2026-05-17T14:32:44.328Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: Error
+Error Message: Path validation failed: Attempted path "/home/vpcuser" resolves outside the allowed workspace directories: /home/vpcuser/upstream-paperclip/paperclip
+
+Stack Trace:
+Error: Path validation failed: Attempted path "/home/vpcuser" resolves outside the allowed workspace directories: /home/vpcuser/upstream-paperclip/paperclip
+    at qJn (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2296:86491)
+    at t.validateToolParams (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2299:3845)
+    at t.build (file:///usr/lib/node_modules/bobshell/bundle/bob.js:378:62268)
+    at t.buildInvocation (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:3372)
+    at file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:5220
+    at Array.map (<anonymous>)
+    at t._schedule (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:4907)
+    at file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:4237
+    at nR (file:///usr/lib/node_modules/bobshell/bundle/bob.js:798:17196)
+    at t.schedule (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2479:3781)
+================================================================================
+

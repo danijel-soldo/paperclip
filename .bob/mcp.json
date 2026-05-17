@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "paperclip": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@paperclipai/mcp-server"
+      ],
+      "env": {
+        "PAPERCLIP_API_URL": "http://droop-bluff-huntsman.ngrok-free.dev:3100",
+        "PAPERCLIP_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZTMzNjJjMC00YTU1LTQ3ODUtOGYxZi05MzdjN2M1NDQzOTQiLCJjb21wYW55X2lkIjoiYjY0NGEwYmQtNjkzNS00MTkyLThmOGYtZDdkZThkZDNlNzFiIiwiYWRhcHRlcl90eXBlIjoiYm9iX3NoZWxsIiwicnVuX2lkIjoiZmJlMzM5ZGUtMWViOC00NmM1LWI1ZjUtYWYzMjNhYjU1YzlhIiwiaWF0IjoxNzc5MDI5OTIzLCJleHAiOjE3NzkyMDI3MjMsImlzcyI6InBhcGVyY2xpcCIsImF1ZCI6InBhcGVyY2xpcC1hcGkifQ.C7oJaQZZKnQMC5JDiUXpWocCO2UZ9qY0w0BBi6-j6aE",
+        "PAPERCLIP_COMPANY_ID": "b644a0bd-6935-4192-8f8f-d7de8dd3e71b",
+        "PAPERCLIP_AGENT_ID": "ce3362c0-4a55-4785-8f1f-937c7c544394",
+        "PAPERCLIP_RUN_ID": "fbe339de-1eb8-46c5-b5f5-af323ab55c9a"
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+
+================================================================================
+ERROR LOGGED: 2026-05-06T21:44:51.129Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: TypeError
+Error Message: terminated
+
+Stack Trace:
+TypeError: terminated
+    at Fetch.onAborted (node:internal/deps/undici/undici:11350:53)
+    at Fetch.emit (node:events:519:28)
+    at Fetch.terminate (node:internal/deps/undici/undici:10508:14)
+    at Object.onError (node:internal/deps/undici/undici:11473:38)
+    at Request.onError (node:internal/deps/undici/undici:2232:31)
+    at Object.errorRequest (node:internal/deps/undici/undici:1726:17)
+    at TLSSocket.<anonymous> (node:internal/deps/undici/undici:6461:16)
+    at TLSSocket.emit (node:events:531:35)
+    at node:net:346:12
+    at TCP.done (node:internal/tls/wrap:671:7)
+================================================================================
+
+
+================================================================================
+ERROR LOGGED: 2026-05-06T21:44:51.132Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: TypeError
+Error Message: terminated
+
+Stack Trace:
+TypeError: terminated
+    at Fetch.onAborted (node:internal/deps/undici/undici:11350:53)
+    at Fetch.emit (node:events:519:28)
+    at Fetch.terminate (node:internal/deps/undici/undici:10508:14)
+    at Object.onError (node:internal/deps/undici/undici:11473:38)
+    at Request.onError (node:internal/deps/undici/undici:2232:31)
+    at Object.errorRequest (node:internal/deps/undici/undici:1726:17)
+    at TLSSocket.<anonymous> (node:internal/deps/undici/undici:6461:16)
+    at TLSSocket.emit (node:events:531:35)
+    at node:net:346:12
+    at TCP.done (node:internal/tls/wrap:671:7)
+================================================================================
+
+
+================================================================================
+ERROR LOGGED: 2026-05-06T22:21:09.050Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: Error
+Error Message: ripgrep exited with code 2: regex parse error:
+    \/events\/ws|WebSocket|EventSource
+    ^^
+error: unrecognized escape sequence
+
+
+Stack Trace:
+Error: ripgrep exited with code 2: regex parse error:
+    \/events\/ws|WebSocket|EventSource
+    ^^
+error: unrecognized escape sequence
+
+    at ChildProcess.<anonymous> (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2299:1451)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.<anonymous> (node:internal/child_process:456:11)
+    at Socket.emit (node:events:519:28)
+    at Pipe.<anonymous> (node:net:346:12)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+================================================================================
+
+
+================================================================================
+ERROR LOGGED: 2026-05-06T22:21:09.051Z
+User ID: d.soldo@ibm.com
+================================================================================
+Error Name: Error
+Error Message: ripgrep exited with code 2: regex parse error:
+    \/events\/ws|WebSocket|EventSource
+    ^^
+error: unrecognized escape sequence
+
+
+Stack Trace:
+Error: ripgrep exited with code 2: regex parse error:
+    \/events\/ws|WebSocket|EventSource
+    ^^
+error: unrecognized escape sequence
+
+    at ChildProcess.<anonymous> (file:///usr/lib/node_modules/bobshell/bundle/bob.js:2299:1451)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.<anonymous> (node:internal/child_process:456:11)
+    at Socket.emit (node:events:519:28)
+    at Pipe.<anonymous> (node:net:346:12)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+================================================================================
+
