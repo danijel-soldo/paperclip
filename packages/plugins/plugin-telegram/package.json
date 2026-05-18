@@ -1,0 +1,40 @@
+{
+  "name": "paperclip-plugin-telegram",
+  "version": "0.3.0",
+  "description": "Bidirectional Telegram integration for Paperclip: push notifications, bot commands, escalation to humans, multi-agent sessions, media pipeline, custom workflow commands, and proactive suggestion watches.",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js"
+  },
+  "scripts": {
+    "prebuild": "node ../../../scripts/ensure-plugin-build-deps.mjs",
+    "build": "tsc",
+    "typecheck": "pnpm --filter @paperclipai/plugin-sdk build && tsc --noEmit",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@paperclipai/plugin-sdk": "workspace:*",
+    "@paperclipai/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paperclipai/paperclip.git",
+    "directory": "packages/plugins/plugin-telegram"
+  },
+  "license": "MIT"
+}

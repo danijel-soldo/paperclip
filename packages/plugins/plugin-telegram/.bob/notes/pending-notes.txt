@@ -1,0 +1,1 @@
+{"id":"d8820a6a-19fc-417f-b2ef-a868e575627c","ts":"2026-04-21T06:05:47.457Z","path":"/home/vpcuser/paperclip-plugin-telegram/ARCHITECTURE_ANALYSIS.md","version":"1.0.0","taskID":"11b510ec-68d9-4186-afc4-06a274ed3f58"}
