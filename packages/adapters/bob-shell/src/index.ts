@@ -9,14 +9,9 @@ Adapter: bob_shell
 
 Core fields:
 - cwd (string, optional): default absolute working directory for the Bob Shell process (created if missing when possible)
-- mode (string, optional): Bob Shell custom mode to use. Auto-derived from agent role if not set
-  (e.g. "paperclip-cto" for cto, "paperclip-engineer" for engineer, "paperclip-agent" as fallback).
-  Set to a built-in Bob mode ("plan", "code", "advanced", "ask") to use Bob's built-in modes directly.
-- modeConfig (object, optional): custom mode configuration with fields:
-  - whenToUse (string, optional): when to use this mode (auto-derived from role if not set)
-  - groups (string[], optional): available tool groups (auto-derived from role if not set)
 - command (string, optional): Bob Shell executable command (defaults to "bob")
-- extraArgs (string[], optional): additional CLI arguments to pass to Bob Shell
+- extraArgs (string[], optional): additional CLI arguments to pass to Bob Shell (e.g. ["--mode", "plan"])
+- modeConfig (object, optional): opaque config object; included in the prompt-bundle cache key
 - env (object, optional): KEY=VALUE environment variables
 - workspaceStrategy (object, optional): execution workspace strategy; currently supports { type: "git_worktree", baseRef?, branchTemplate?, worktreeParentDir? }
 - workspaceRuntime (object, optional): reserved for workspace runtime metadata
@@ -26,11 +21,12 @@ Operational fields:
 - graceSec (number, optional): SIGTERM grace period in seconds before SIGKILL
 
 Bob Shell Integration:
-- Paperclip will generate .bob/ workspace configuration before launching Bob Shell
+- Paperclip generates .bob/ workspace configuration before launching Bob Shell
 - Generated files include:
-  - .bob/custom_modes.yaml (managed "paperclip-{role}" mode, e.g. "paperclip-cto")
   - .bob/mcp.json (managed "paperclip" MCP server entry)
-  - .bob/rules-{mode}/*.md (runtime instructions and company skills)
+  - .bob/rules-paperclip/*.md (runtime instructions and company skills)
+- Bob Shell is launched in its default mode; no custom_modes.yaml is written and no --mode flag is passed
+- To use a specific Bob mode, pass it via extraArgs: ["--mode", "<slug>"]
 - Bob Shell connects back to Paperclip via the Paperclip MCP server
 - Paperclip injects runtime context via environment variables:
   - PAPERCLIP_API_URL
@@ -43,7 +39,6 @@ Bob Shell Integration:
 
 Notes:
 - Bob Shell must be installed and available in PATH or via the configured command
-- Paperclip-managed .bob/ files may be refreshed during workspace sync
-- User changes to managed Paperclip entries may be overwritten
-- Unrelated Bob Shell configuration (other modes, MCP servers) is preserved
+- The "paperclip" MCP server entry in .bob/mcp.json is managed and will be overwritten on each run
+- Other MCP servers and files in .bob/ are preserved
 `;
